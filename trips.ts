@@ -48,6 +48,15 @@ export type AddTripBody = {
   points: string; //JSON stringified array of Point[]
 }
 
+export type PlaceHintDTO = {
+  id: number;
+  name: string;
+  city: string;
+  point: string;
+} 
+
+export type PlaceHintResponse = PlaceHintDTO[];
+
 export type EditTripBody = {
   id: string;
   color: string;
