@@ -52,7 +52,7 @@ export type PlaceHintDTO = {
   id: number;
   name: string;
   city: string;
-  point: string;
+  point: GeoJsonPoint;
 } 
 
 export type PlaceHintResponse = PlaceHintDTO[];
