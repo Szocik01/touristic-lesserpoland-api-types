@@ -12,9 +12,14 @@ export type LoginBody = {
 
 export type SignUpReponse = {
   token: string;
+  userName: string;
+  userId: number;
   message: string;
 };
 
 export type LoginResponse = {
   token: string;
+  userName: string;
+  userId: number;
+  rememberMe: boolean;
 };
