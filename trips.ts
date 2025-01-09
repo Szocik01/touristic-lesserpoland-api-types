@@ -1,4 +1,3 @@
-
 export type FindRouteBody = {
   points: LatLng[];
   profile: "car" | "bike" | "foot";
@@ -36,7 +35,7 @@ export type Point = {
   osmPointId?: number;
   coordinates?: LatLng;
   order: number;
-}
+};
 
 export type AddTripBody = {
   route: GeoJsonLineString;
@@ -50,14 +49,23 @@ export type AddTripBody = {
   distance: number;
   time: number;
   points: string; //JSON stringified array of Point[]
-}
+};
+
+export type GeoJsonString = string;
 
 export type PlaceHintDTO = {
   id: number;
   name: string;
   city: string;
+  point: GeoJsonString;
+};
+
+export type PlaceHintParsed = {
+  id: number;
+  name: string;
+  city: string;
   point: GeoJsonPoint;
-} 
+};
 
 export type PlaceHintResponse = PlaceHintDTO[];
 
@@ -68,17 +76,17 @@ export type EditTripBody = {
   name: string;
   description: string;
   deletedImagesIds: number[];
-}
+};
 
 export type AddTripCommentBody = {
   tripId: string;
   content: string;
-}
+};
 
 export type EditTripCommentBody = {
   commentId: string;
   content: string;
-}
+};
 
 export type GeoJsonPoint = {
   type: "Point";
