@@ -45,6 +45,10 @@ export type AddTripBody = {
   type: TripTypes;
   name: string;
   description: string;
+  ascend: number;
+  descend: number;
+  distance: number;
+  time: number;
   points: string; //JSON stringified array of Point[]
 }
 
