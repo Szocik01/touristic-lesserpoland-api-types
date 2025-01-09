@@ -61,6 +61,48 @@ export type PlaceHintDTO = {
 
 export type PlaceHintResponse = PlaceHintDTO[];
 
+export type TripImageDTO = {
+  id: number;
+  name: string;
+  path: string;
+}
+
+export type TripCommentDTO = {
+  id: string;
+  tripId: string;
+  userId: string;
+  content: string;
+  dateAdd: string;
+}
+
+export type TripPointDTO = {
+  id: number
+  name?: string,
+  osmPointId?: number,
+  tripId: string,
+  coordinates: string,
+  order: number,
+}
+
+export type TripDTO = {
+  id: string;
+  route: GeoJsonLineString;
+  color: string;
+  isPublic: boolean;
+  type: TripTypes;
+  name: string;
+  description: string;
+  ascend: number;
+  descend: number;
+  distance: number;
+  time: number;
+  tripOwnerId: string;
+  images: TripImageDTO[];
+  comments: TripCommentDTO[];
+  points: TripPointDTO[];
+}
+
+
 export type EditTripBody = {
   id: string;
   color: string;
