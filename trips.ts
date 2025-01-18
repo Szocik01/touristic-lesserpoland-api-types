@@ -27,6 +27,10 @@ export type GraphHopperApiSuccessResponse = {
   };
   ascend: number;
   descend: number;
+  details:{
+    leg_time:[number,number,number][],
+    leg_distance:[number,number,number][]
+  }
 };
 
 export type TripTypes = "car" | "bike" | "foot";
