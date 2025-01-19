@@ -9,7 +9,7 @@ export type FindRouteHintDTO = {
   id: number;
   name: string;
   type: "place" | "polygon";
-  way: string;
+  way: GeoJsonString;
 };
 
 export type FindRouteHintsDTO = FindRouteHintDTO[];
