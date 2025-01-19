@@ -5,6 +5,15 @@ export type FindRouteBody = {
   optimize?: boolean; //can change order of points if other order provides better route
 };
 
+export type FindRouteHintDTO = {
+  id: number;
+  name: string;
+  type: "place" | "polygon";
+  way: string;
+};
+
+export type FindRouteHintsDTO = FindRouteHintDTO[];
+
 export type GraphHopperApiErrorResponse = {
   message: string;
   hints: {
@@ -27,10 +36,10 @@ export type GraphHopperApiSuccessResponse = {
   };
   ascend: number;
   descend: number;
-  details:{
-    leg_time:[number,number,number][],
-    leg_distance:[number,number,number][]
-  }
+  details: {
+    leg_time: [number, number, number][];
+    leg_distance: [number, number, number][];
+  };
 };
 
 export type TripTypes = "car" | "bike" | "foot";
@@ -77,7 +86,7 @@ export type TripImageDTO = {
   id: number;
   name: string;
   path: string;
-}
+};
 
 export type TripCommentDTO = {
   id: string;
@@ -85,16 +94,16 @@ export type TripCommentDTO = {
   userId: string;
   content: string;
   dateAdd: string;
-}
+};
 
 export type TripPointDTO = {
-  id: number
-  name?: string,
-  osmPointId?: number,
-  tripId: string,
-  coordinates: string,
-  order: number,
-}
+  id: number;
+  name?: string;
+  osmPointId?: number;
+  tripId: string;
+  coordinates: string;
+  order: number;
+};
 
 export type TripDTO = {
   id: string;
@@ -112,8 +121,7 @@ export type TripDTO = {
   images: TripImageDTO[];
   comments: TripCommentDTO[];
   points: TripPointDTO[];
-}
-
+};
 
 export type EditTripBody = {
   id: string;
