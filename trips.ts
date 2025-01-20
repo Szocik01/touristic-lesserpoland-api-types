@@ -1,5 +1,3 @@
-import { Trip } from "../../models/trip";
-
 export type FindRouteBody = {
   points: LatLng[];
   profile: "car" | "bike" | "foot";
@@ -14,10 +12,10 @@ export type FindRouteHintDTO = {
   way: GeoJsonString;
 };
 
-export type SearchTripResponse = {
+export type SearchTripDTO = {
   pageCount: number;
-  trips: Trip[]
-}
+  trips: TripDTO[];
+};
 
 export type FindRouteHintsDTO = FindRouteHintDTO[];
 
