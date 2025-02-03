@@ -123,6 +123,7 @@ export type TripDTO = {
   distance: number;
   time: number;
   tripOwnerId: string;
+  isUsersFavourite: boolean;
   images: TripImageDTO[];
   comments: TripCommentDTO[];
   points: TripPointDTO[];
