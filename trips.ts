@@ -1,5 +1,5 @@
 export type FindRouteBody = {
-  points: LatLng[];
+  points: LatLngAlt[];
   profile: "car" | "bike" | "foot";
   elevation?: boolean;
   optimize?: boolean; //can change order of points if other order provides better route
@@ -26,7 +26,7 @@ export type GraphHopperApiErrorResponse = {
   }[];
 };
 
-export type LatLng = [number, number];
+export type LatLngAlt = [number, number, number?];
 
 export type GraphHopperApiSuccessResponse = {
   distance: number;
@@ -37,7 +37,7 @@ export type GraphHopperApiSuccessResponse = {
   bbox: number[];
   points: {
     type: string;
-    coordinates: LatLng[];
+    coordinates: LatLngAlt[];
   };
   ascend: number;
   descend: number;
@@ -51,7 +51,7 @@ export type TripTypes = "car" | "bike" | "foot";
 
 export type Point = {
   osmPointId?: number;
-  coordinates?: LatLng;
+  coordinates?: LatLngAlt;
   order: number;
 };
 
@@ -179,15 +179,15 @@ export type EditTripCommentBody = {
 
 export type GeoJsonPoint = {
   type: "Point";
-  coordinates: LatLng;
+  coordinates: LatLngAlt;
 };
 
 export type GeoJsonLineString = {
   type: "LineString";
-  coordinates: LatLng[];
+  coordinates: LatLngAlt[];
 };
 
 export type GeoJsonPolygon = {
   type: "Polygon";
-  coordinates: LatLng[][];
+  coordinates: LatLngAlt[][];
 };
