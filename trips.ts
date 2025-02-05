@@ -97,6 +97,7 @@ export type TripCommentDTO = {
   id: string;
   tripId: string;
   userId: string;
+  userName: string;
   content: string;
   dateAdd: string;
 };
@@ -112,7 +113,7 @@ export type TripPointDTO = {
 
 export type TripDTO = {
   id: string;
-  route: GeoJsonLineString;
+  route: string;
   color: string;
   isPublic: boolean;
   type: TripTypes;
@@ -127,6 +128,34 @@ export type TripDTO = {
   images: TripImageDTO[];
   comments: TripCommentDTO[];
   points: TripPointDTO[];
+};
+
+export type ParsedTripPoints = {
+  id: number;
+  name?: string;
+  osmPointId?: number;
+  tripId: string;
+  coordinates: GeoJsonPoint;
+  order: number;
+}[];
+
+export type ParsedTrip = {
+  id: string;
+  route: GeoJsonLineString;
+  color: string;
+  isPublic: boolean;
+  type: TripTypes;
+  name: string;
+  description: string;
+  ascend: number;
+  descend: number;
+  distance: number;
+  time: number;
+  tripOwnerId: string;
+  isUsersFavourite: boolean;
+  images: TripImageDTO[];
+  comments: TripCommentDTO[];
+  points: ParsedTripPoints;
 };
 
 export type EditTripBody = {
