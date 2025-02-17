@@ -28,6 +28,8 @@ export type GraphHopperApiErrorResponse = {
 
 export type LatLngAlt = [number, number, number?];
 
+export type LatLng = [number, number];
+
 export type GraphHopperApiSuccessResponse = {
   distance: number;
   weight: number;
@@ -125,6 +127,7 @@ export type TripDTO = {
   time: number;
   tripOwnerId: string;
   isUsersFavourite: boolean;
+  isUserOwner: boolean;
   images: TripImageDTO[];
   comments: TripCommentDTO[];
   points: TripPointDTO[];
@@ -191,3 +194,26 @@ export type GeoJsonPolygon = {
   type: "Polygon";
   coordinates: LatLngAlt[][];
 };
+
+export type GeoJsonFeature = {
+  type: "Feature";
+  geometry: GeoJsonPoint | GeoJsonLineString | GeoJsonPolygon;
+  properties: { [key: string]: any };
+};
+
+export type GeoJsonFeatureCollection= {
+  type: "FeatureCollection";
+  features: GeoJsonFeature[];
+};
+
+export type ParsedFindRouteHint = {
+  id: number;
+  name: string;
+  type: "place" | "polygon";
+  way: GeoJsonPoint | GeoJsonPolygon;
+}
+
+export type ToggleFavouriteTripResponse = {
+  tripId: string;
+  isAdded: boolean;
+}
