@@ -113,6 +113,16 @@ export type TripPointDTO = {
   order: number;
 };
 
+export type TripWeatherDTO = {
+  daily: {
+    date: string;
+    temperature: number;
+    weatherCode: number;
+    precipitationSum: number;
+    windSpeed: number;
+  }[][];
+};
+
 export type TripDTO = {
   id: string;
   route: string;
@@ -131,6 +141,7 @@ export type TripDTO = {
   images: TripImageDTO[];
   comments: TripCommentDTO[];
   points: TripPointDTO[];
+  weather: TripWeatherDTO;
 };
 
 export type ParsedTripPoints = {
@@ -160,6 +171,7 @@ export type ParsedTrip = {
   images: TripImageDTO[];
   comments: TripCommentDTO[];
   points: ParsedTripPoints;
+  weather: TripWeatherDTO;
 };
 
 export type EditTripBody = {
@@ -202,7 +214,7 @@ export type GeoJsonFeature = {
   properties: { [key: string]: any };
 };
 
-export type GeoJsonFeatureCollection= {
+export type GeoJsonFeatureCollection = {
   type: "FeatureCollection";
   features: GeoJsonFeature[];
 };
@@ -212,9 +224,9 @@ export type ParsedFindRouteHint = {
   name: string;
   type: "place" | "polygon";
   way: GeoJsonPoint | GeoJsonPolygon;
-}
+};
 
 export type ToggleFavouriteTripResponse = {
   tripId: string;
   isAdded: boolean;
-}
+};
