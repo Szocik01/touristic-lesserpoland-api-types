@@ -117,7 +117,7 @@ export type TripDTO = {
   id: string;
   route: string;
   color: string;
-  isPublic: boolean;
+  public: boolean;
   type: TripTypes;
   name: string;
   description: string;
@@ -146,7 +146,7 @@ export type ParsedTrip = {
   id: string;
   route: GeoJsonLineString;
   color: string;
-  isPublic: boolean;
+  public: boolean;
   type: TripTypes;
   name: string;
   description: string;
@@ -155,6 +155,7 @@ export type ParsedTrip = {
   distance: number;
   time: number;
   tripOwnerId: string;
+  isUserOwner: boolean;
   isUsersFavourite: boolean;
   images: TripImageDTO[];
   comments: TripCommentDTO[];
