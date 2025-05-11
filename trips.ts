@@ -49,6 +49,21 @@ export type GraphHopperApiSuccessResponse = {
   };
 };
 
+export type Route = {
+  distance?: number;
+  time?: number;
+  ascend?: number;
+  descend?: number;
+  details?: {
+    leg_time: [number, number, number][];
+    leg_distance: [number, number, number][];
+  };
+  points: {
+    type: string;
+    coordinates: LatLngAlt[];
+  };
+}
+
 export type TripTypes = "car" | "bike" | "foot";
 
 export type Point = {
