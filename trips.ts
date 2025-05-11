@@ -121,6 +121,14 @@ export type TripWeatherDTO = {
     precipitationSum: number;
     windSpeed: number;
   }[][];
+  hourly: {
+    date: string;
+    hour: string;
+    temperature: number;
+    weatherCode: number;
+    precipitationSum: number;
+    windSpeed: number;
+  }[][][];
 };
 
 export type TripDTO = {
