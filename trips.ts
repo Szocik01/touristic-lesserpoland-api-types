@@ -128,22 +128,18 @@ export type TripPointDTO = {
   order: number;
 };
 
+export type PointWeatherDTO = {
+  date: string;
+  hour?: string;
+  temperature: number;
+  weatherCode: number;
+  precipitationSum: number;
+  windSpeed: number;
+}
+
 export type TripWeatherDTO = {
-  daily: {
-    date: string;
-    temperature: number;
-    weatherCode: number;
-    precipitationSum: number;
-    windSpeed: number;
-  }[][];
-  hourly: {
-    date: string;
-    hour: string;
-    temperature: number;
-    weatherCode: number;
-    precipitationSum: number;
-    windSpeed: number;
-  }[][][];
+  daily: PointWeatherDTO[][];
+  hourly:PointWeatherDTO[][];
 };
 
 export type TripDTO = {
